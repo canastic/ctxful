@@ -14,8 +14,11 @@ func NewWriter(ctx context.Context, w io.Writer) io.Writer {
 }
 
 func readWriteContextFunc(ctx context.Context, op func([]byte) (int, error)) func([]byte) (int, error) {
-	return func(b []byte) (n int, err error) {
+	return func(b []byte) (int, error) {
 		got := make(chan struct{})
+
+		var n int
+		var err error
 
 		go func() {
 			n, err = op(b)
