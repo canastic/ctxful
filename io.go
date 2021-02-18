@@ -1,3 +1,4 @@
+// Package ctxful passes contexts to things that don't take contexts.
 package ctxful
 
 import (

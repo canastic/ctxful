@@ -1,4 +1,4 @@
-module gitlab.com/canastic/ctxful
+module github.com/canastic/ctxful
 
 go 1.12
 
